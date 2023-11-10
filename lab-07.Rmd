@@ -64,7 +64,7 @@ ggplot(data = evals,
     subtitle = "Using geom_jitter()" )
 ```
 
-Ex1.2 geom_jitter() seems to be less rounded than geom_point().
+Ex1.2 geom_jitter() seems to be less rounded than geom_point(). Maybe some of the points were seeming to be missing with geom_point() as they would be on top of each other. With geom_jitter() it seems to be that points that have multiple points in the same place would appear larger.
 
 # Exercise 2: Simple Linear regression with a numerical predictor
 
