@@ -24,18 +24,47 @@ evals<-read.csv("data/evals.csv", row.names=1)
 1.  Visualize the distribution of `score` in the dataframe `evals`.
 
 ```{r viz-score}
-# add code here
+# Ex1.1
+ggplot(evals, mapping = aes(x = score, )) + 
+  geom_histogram(bins = 30)
+
+summarise(evals,
+          mean_score = mean(score),
+          med_score = median(score))
 ```
 
-*Add your other details and narratives here.*
+Ex1.1 The data is left skewed,the mean is to the left of the median. 
 
 2.  Visualize and describe the relationship between `score` and `bty_avg` using `geom_point()` to represent the data. 
 
 ```{r scatterplot}
-# add code here
+#Ex1.2
+ggplot(data = evals, 
+       mapping = aes(
+         x = bty_avg,   
+         y = score
+         )) +
+  geom_point() +
+  labs(
+    x = "Average Beauty Rating",
+    y = "Score",
+    title = "Relationship Between Score and Average Beauty Rating of Professor",
+    subtitle = "Using geom_point()" )
+
+ggplot(data = evals, 
+       mapping = aes(
+         x = bty_avg,   
+         y = score
+         )) +
+  geom_jitter() +
+  labs(
+    x = "Average Beauty Rating",
+    y = "Score",
+    title = "Relationship Between Score and Average Beauty Rating of Professor",
+    subtitle = "Using geom_jitter()" )
 ```
 
-*Add your narrative and other details here.*
+Ex1.2 geom_jitter() seems to be less rounded than geom_point().
 
 # Exercise 2: Simple Linear regression with a numerical predictor
 
